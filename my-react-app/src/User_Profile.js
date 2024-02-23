@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const User_Profile = ({ user }) => {
     return (
         <div>
