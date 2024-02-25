@@ -34,7 +34,7 @@ function userExists(username, email) {
 }
 
 
-app.post('/api/Create_Account', async (req, res) => {
+axios.post('/api/Create_Account', async (req, res) => {
   try {
     const { username, password, email } = req.body;
 

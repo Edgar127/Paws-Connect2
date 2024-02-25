@@ -30,7 +30,7 @@ function Create_Account() {
             });
     };
     return (
-        <div className="create-account-container">
+        <div >
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
