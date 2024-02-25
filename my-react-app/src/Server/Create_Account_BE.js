@@ -13,10 +13,20 @@ const connection = mysql.createConnection({
   database: 'profile'
 });
 
+// connection.connect(err => {
+//   if (err) throw err;
+//   console.log('Connected to the MySQL server.');
+// });
+
 connection.connect(err => {
-  if (err) throw err;
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
   console.log('Connected to the MySQL server.');
 });
+
+
 
 app.use(bodyParser.json());
 

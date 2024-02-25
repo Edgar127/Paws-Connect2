@@ -10,9 +10,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; /* Center horizontally */
-    /* background-image: url('/Users/varadtawde/Downloads/CST438 Project/pet.jpeg'); Add your background image path here
     background-size: cover;
-    background-position: center; */
+    background-position: center;
 }
 .create-account-container h2 {
     text-align: center;
