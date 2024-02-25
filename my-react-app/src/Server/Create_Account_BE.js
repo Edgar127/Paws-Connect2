@@ -20,10 +20,9 @@ connection.connect(err => {
 
 app.use(bodyParser.json());
 
-// Convert userExists to use Promises for better async/await integration
 function userExists(username, email) {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT * FROM users WHERE username = ? OR email = ? LIMIT 1';
+    const query = 'SELECT * FROM UserProfile WHERE name = ? OR Email = ? LIMIT 1';
     connection.query(query, [username, email], (error, results) => {
       if (error) {
         reject(error);
@@ -34,7 +33,7 @@ function userExists(username, email) {
   });
 }
 
-// Corrected route handler
+
 app.post('/api/Create_Account', async (req, res) => {
   try {
     const { username, password, email } = req.body;
@@ -45,8 +44,7 @@ app.post('/api/Create_Account', async (req, res) => {
       return res.status(409).send('Username or email already taken');
     }
 
-    // Proceed with adding user data to database
-    // Make sure to hash the password before storing it
+   
     await addUserDataToDatabase({ username, password, email });
     res.status(200).send('User registered successfully');
   } catch (error) {
